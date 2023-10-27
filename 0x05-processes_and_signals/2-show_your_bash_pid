@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# prints the process tree
+# shellcheck disable=SC2009
+ps -C bash u h f

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prints out the pid of itself
+# ps -C "bash $0" -o pid= | tr -d " "
+pgrep -f "$0"
