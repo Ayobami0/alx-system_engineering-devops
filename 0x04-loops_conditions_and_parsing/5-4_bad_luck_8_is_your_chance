@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Echos the string 10 times using while loop.
+# If n is 4 echos bad luck and if its 8
+#+ echos good luck
+n=1
+while [[ $n -le 10 ]]
+do
+	if [[ $n = 4 ]]
+	then
+		   echo "bad luck"
+	elif [[ $n = 8 ]]
+	then
+		   echo "good luck"
+	else
+		echo "Best School"
+	fi
+	n=$(( n+1 ))
+done

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# ls for loop
+for f_dir in *
+do
+	cut -d "-" -f 2 <<< "$f_dir"
+done

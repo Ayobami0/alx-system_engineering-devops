@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Echos the string 10 times using while loop.
+# If n is 9,says hi
+n=0
+while [ $n -lt 10 ]
+do
+	echo "Best School"
+	n=$(( n+1 ))
+	if [ $n -eq 9 ]; then
+		   echo Hi
+	fi
+done
