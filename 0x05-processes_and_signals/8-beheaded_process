@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-#
+# You underestimate my power!
+pkill -9 -f "7-highlander"

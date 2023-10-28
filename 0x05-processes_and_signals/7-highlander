@@ -1,1 +1,8 @@
 #!/usr/bin/env bash
+# I have the high ground! I am INVINCIBLE!!!
+trap "I am invincible!!!" SIGTERM
+for ((;;))
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
