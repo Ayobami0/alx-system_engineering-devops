@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Networking Advanced Task
+# Listening for message
+nc -l localhost 98
