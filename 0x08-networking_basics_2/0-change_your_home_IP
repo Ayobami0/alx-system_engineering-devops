@@ -2,6 +2,5 @@
 # Networking Task 0
 # Changes The ip of localhost and facebook
 cp /etc/hosts ~/hosts.new
-printf '127.0.0.2\tlocalhost' >> ~/hosts.new
-printf '8.8.8.8\tfacebook.com' >> ~/hosts.new
+printf '127.0.0.2\tlocalhost\n8.8.8.8\tfacebook.com' >> ~/hosts.new
 cp -f ~/hosts.new /etc/hosts
