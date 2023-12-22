@@ -1,5 +1,6 @@
 # Downloads the package flask using pip3
 package {'Flask':
   provider        => 'pip3',
-  name            => 'install flask==2.1.0 --ignore-installed',
+  name            => 'flask==2.1.0',
+  install_options => ['install', '--ignore-installed']
 }
