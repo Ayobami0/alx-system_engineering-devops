@@ -2,5 +2,5 @@
 package {'Flask':
   provider        => 'pip3',
   name            => 'flask==2.1.0',
-  install_options => 'install'
+  install_options => ['install', '--ignore-installed']
 }
