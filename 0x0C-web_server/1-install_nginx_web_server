@@ -2,7 +2,6 @@
 # Nginx setup script
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
 printf "http {\n\tserver {\n\t\tlisten 80;\n\t\troot /var/www/data/;\n\t}\n}\nevents{}\n" | sudo tee /etc/nginx/nginx.conf >> /dev/null
 sudo mkdir -p /var/www/data
 printf "Hello World!\n" | sudo tee /var/www/data/index.html >> /dev/null
