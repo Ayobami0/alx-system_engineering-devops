@@ -3,5 +3,7 @@
 sudo su
 apt-get -y install nginx
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-printf "http {a\nserver {\ninclude /etc/nginx/mime.types;\nlisten 80;\nlocation / {\ndefault_type application/html;\nreturn Hello World!\n}\n}\nevents{}" >> /etc/nginx/nginx.conf
+printf "http {\n\tserver {\n\t\tlisten 80;\n\t\troot /var/www/data/;\n\t}\n}\nevents{}\n" >> /etc/nginx/nginx.conf
+mkdir /var/www/data
+printf "Hello World!" >> /var/www/data/index.html
 nginx -s reload
