@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # Nginx setup script
-sudo su
-apt-get -y install nginx
-mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-printf "http {\n\tserver {\n\t\tlisten 80;\n\t\troot /var/www/data/;\n\t}\n}\nevents{}\n" >> /etc/nginx/nginx.conf
-mkdir /var/www/data
-printf "Hello World!" >> /var/www/data/index.html
-nginx -s reload
+sudo apt-get install -y nginx
+printf "http {\n\tserver {\n\t\tlisten 80;\n\t\troot /var/www/data/;\n\t}\n}\nevents{}\n" | sudo tee /etc/nginx/nginx.conf >> /dev/null
+sudo mkdir -p /var/www/data
+printf "Hello World!\n" | sudo tee /var/www/data/index.html >> /dev/null
+sudo nginx -s reload
