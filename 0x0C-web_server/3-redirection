@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+## setup nginx redirect
+sudo su
+sed -i '5i location /redirect_me {\nrewrite ^/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}\n' /etc/nginx/nginx.conf
