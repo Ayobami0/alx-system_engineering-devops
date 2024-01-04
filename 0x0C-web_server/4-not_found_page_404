@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Sets up 404 error page
+sudo su
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+printf "
+http {
+        server {
+                listen 80;
+                root /var/www/data/;
+                index index.html;
+                error_page 404 /404.html;
+
+                location /redirect_me {
+                        rewrite ^/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+                }
+                location /404.html {
+                        root /var/www/data/error;
+                        internal;
+                }
+        }
+}
+" >> /etc/nginx/nginx.conf
+mkdir -p /var/www/data/error
+printf "Ceci n'est pas une page" >> /var/www/data/error/404.html
+nginx -s reload
