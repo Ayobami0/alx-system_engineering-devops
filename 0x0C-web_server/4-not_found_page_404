@@ -24,4 +24,8 @@ events {}
 mkdir -p /var/www/data/error
 printf "Hello World!\n" | sudo tee /var/www/data/index.html >> /dev/null
 printf "Ceci n'est pas une page\n" | sudo tee /var/www/data/error/404.html >> /dev/null
-sudo nginx -s reload
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	sudo service nginx start
+else
+	sudo service nginx restart
+fi
