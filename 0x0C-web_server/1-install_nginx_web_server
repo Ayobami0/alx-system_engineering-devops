@@ -2,5 +2,5 @@
 # Nginx setup script
 sudo apt-get update
 sudo apt-get -y install nginx
-printf "Hello World!\n" | sudo tee /var/www/html/index.html >> /dev/null
+echo "Hello World!" | sudo tee /var/www/html/index.html >> /dev/null
 sudo nginx -s reload
