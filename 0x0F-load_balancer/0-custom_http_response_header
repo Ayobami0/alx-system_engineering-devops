@@ -9,7 +9,7 @@ http {
                 root /var/www/data/;
                 index index.html;
                 error_page 404 /404.html;
-								add_header X-Served-By \$hostname
+								add_header X-Served-By \$hostname;
                 location /redirect_me {
                         rewrite ^/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
                 }
@@ -21,7 +21,7 @@ http {
 }
 events {}
 " | sudo tee /etc/nginx/nginx.conf >> /dev/null
-mkdir -p /var/www/data/error
+sudo mkdir -p /var/www/data/error
 printf "Hello World!\n" | sudo tee /var/www/data/index.html >> /dev/null
 printf "Ceci n'est pas une page\n" | sudo tee /var/www/data/error/404.html >> /dev/null
 if [ "$(pgrep -c nginx)" -le 0 ]; then
