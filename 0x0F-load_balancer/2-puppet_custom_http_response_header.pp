@@ -1,3 +1,4 @@
+# puppet config for nginx server
 file {'/etc/nginx/nginx.conf':
   ensure  => present,
   content => "
