@@ -39,13 +39,16 @@ service {'nginx':
   require => File['/var/www/data/error/404.html']
 }
 
-exec {'/bin/apt-get update':
-  before => Package['nginx'],
-  user   => root,
+exec {'update':
+  path     => ['/usr/bin', '/sbin', '/bin', '/usr/sbin'],
+  command  => 'sudo apt-get update -y',
+  provider => 'shell',
+  before   => Exec['install_nginx'],
 }
 
-package {'nginx':
-  ensure          => installed,
-  provider        => apt,
-  install_options => ['-y'],
+
+exec { 'install_nginx':
+  path     => ['/usr/bin', '/sbin', '/bin', '/usr/sbin'],
+  command  => 'sudo apt-get install nginx -y',
+  provider => 'shell',
 }
