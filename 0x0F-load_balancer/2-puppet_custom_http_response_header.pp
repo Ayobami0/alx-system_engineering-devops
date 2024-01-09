@@ -30,7 +30,7 @@ file {'/var/www/data/index.html':
 
 file {'/var/www/data/error/404.html':
   ensure  => present,
-  content => "Ceci n'est pas une page\n"
+  content => "Ceci n'est pas une page\n",
   require => File['/var/www/data/index.html']
 }
 
@@ -39,8 +39,9 @@ service {'nginx':
   require => File['/var/www/data/error/404.html']
 }
 
-exec {'sudo su; sudo apt-get update':
-  before => Package['nginx']
+exec {'/bin/apt-get update':
+  before => Package['nginx'],
+  user   => root,
 }
 
 package {'nginx':
