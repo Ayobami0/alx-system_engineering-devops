@@ -6,5 +6,5 @@ if [[ -z $2 ]]; then
 		dig "$s_domain.$1" +noall +answer | awk -v s_d="$s_domain" '{print "The subdomain " s_d " is a " $4 " record and points to " $5}'
 	done
 	else
-		dig "$2.$1"  +noall +answer | awk -v s_d="$s_domain" '{print "The subdomain " s_d " is a " $4 " record and points to " $5}'
+		dig "$2.$1"  +noall +answer | awk -v s_d="$s_domain" '{print "The subdomain" s_d " is a " $4 " record and points to " $5}'
 fi
