@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # This script runs nginx command as nginx
-sudo systemctl stop nginx
-sudo -u Ayobami nginx -g 'listen 8080'
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod u+rw g+rw /etc/nginx/nginx.conf
+sudo -u nginx nginx
