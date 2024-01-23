@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# This script runs nginx command as nginx
-service nginx stop
+# This script runs nginx command as nginx but shorter
+pkill -f "apache2|nginx"
 chown nginx:nginx /etc/nginx/nginx.conf
 chmod u+rw g+rw /etc/nginx/nginx.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
-pkill -f apache
 sudo -u nginx nginx
