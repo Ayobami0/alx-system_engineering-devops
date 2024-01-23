@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script runs nginx command as nginx
-sudo service nginx stop
-sudo -u nginx "nginx -g 'listen 8080'"
+sudo systemctl stop nginx
+sudo -u Ayobami nginx -g 'listen 8080'
