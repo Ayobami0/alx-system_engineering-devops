@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script to automate the backup of a mysql database.
-mysqldump --all-databases -u root -p "$1" > backup.sql
+mysqldump --all-databases -u root -p "$1" -r backup.sql
 f_name="$(date +%d-%m-%Y).tar.gz"
 tar -czf "$f_name" backup.sql 
