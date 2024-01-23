@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script runs nginx command as nginx
+sudo systemctl stop nginx
+su - nginx -c "nginx -g 'listen 8080'"
+sudo systemctl start nginx
