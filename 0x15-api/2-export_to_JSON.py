@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Gathers data from an api and stores them in a CSV file."""
+"""Gathers data from an api and stores them in a JSON file."""
 
-import sys
-import requests
 import json
+import requests
+import sys
 
 BASE_URL = 'https://jsonplaceholder.typicode.com'
 employee_id = sys.argv[1]

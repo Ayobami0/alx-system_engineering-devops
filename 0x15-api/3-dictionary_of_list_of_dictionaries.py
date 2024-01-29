@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Gathers data from an api and stores them in a CSV file."""
+"""Gathers data from an api and stores them in a JSON file."""
 
-import requests
 import json
+import requests
 
 BASE_URL = 'https://jsonplaceholder.typicode.com'
 JSON_FILE = 'todo_all_employees.json'
