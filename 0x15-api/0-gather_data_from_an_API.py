@@ -8,8 +8,8 @@ It wont be executed if imported.
 """
 
 if __name__ == '__main__':
-    import sys
     from requests import get
+    import sys
 
     BASE_URL = 'https://jsonplaceholder.typicode.com'
     employee_id = sys.argv[1]
