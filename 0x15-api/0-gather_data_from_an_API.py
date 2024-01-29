@@ -8,10 +8,10 @@ It wont be executed if imported.
 """
 
 import requests
-import sys
+from sys import argv
 
 if __name__ == '__main__':
-    employee_id = sys.argv[1]
+    employee_id = argv[1]
     base_name = 'https://jsonplaceholder.typicode.com'
 
     employee = requests.get('{}/users/{}'.format(
