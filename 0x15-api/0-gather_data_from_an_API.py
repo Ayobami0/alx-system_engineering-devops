@@ -7,10 +7,10 @@ parameter then displays it to the standard output.
 It wont be executed if imported.
 """
 
-if __name__ == '__main__':
-    import requests
-    import sys
+import requests
+import sys
 
+if __name__ == '__main__':
     employee_id = sys.argv[1]
     base_name = 'https://jsonplaceholder.typicode.com'
 
