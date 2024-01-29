@@ -11,8 +11,8 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    base_name = 'https://jsonplaceholder.typicode.com'
     employee_id = sys.argv[1]
+    base_name = 'https://jsonplaceholder.typicode.com'
 
     employee = requests.get('{}/users/{}'.format(
         base_name, employee_id)).json()
