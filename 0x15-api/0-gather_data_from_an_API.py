@@ -8,16 +8,16 @@ It wont be executed if imported.
 """
 
 if __name__ == '__main__':
-    import requests
     import sys
+    from requests import get
 
     BASE_URL = 'https://jsonplaceholder.typicode.com'
     employee_id = sys.argv[1]
 
-    employee = requests.get('{}/users/{}'.format(BASE_URL, employee_id)).json()
-    all_tasks = requests.get(
+    employee = get('{}/users/{}'.format(BASE_URL, employee_id)).json()
+    all_tasks = get(
         '{}/users/{}/todos'.format(BASE_URL, employee_id)).json()
-    completed_tasks = requests.get(
+    completed_tasks = get(
         '{}/users/{}/todos?completed=true'.format(
             BASE_URL, employee_id)).json()
 
