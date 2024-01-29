@@ -26,4 +26,4 @@ if __name__ == '__main__':
         employee.get('name'),
         len(completed_tasks),
         len(all_tasks)),
-          *[t.get('title') for t in completed_tasks], sep='\n\t ')
+        *[t.get('title') for t in completed_tasks], sep='\n\t ')
