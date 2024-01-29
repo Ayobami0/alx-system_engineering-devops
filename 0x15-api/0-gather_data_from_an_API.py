@@ -7,9 +7,9 @@ parameter then displays it to the standard output.
 It wont be executed if imported.
 """
 
+import requests
+import sys
 if __name__ == '__main__':
-    import requests
-    import sys
 
     BASE_URL = 'https://jsonplaceholder.typicode.com'
     employee_id = sys.argv[1]
