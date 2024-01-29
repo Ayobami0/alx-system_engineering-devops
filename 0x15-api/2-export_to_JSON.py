@@ -1,25 +1,33 @@
 #!/usr/bin/python3
-"""Gathers data from an api and stores them in a JSON file."""
+"""
+Gathers data from an api and displays them in stdout.
 
-import json
-import requests
-import sys
+This module gathers data from an api using the employee id as a
+parameter then outputs them in a json file.
 
-BASE_URL = 'https://jsonplaceholder.typicode.com'
-employee_id = sys.argv[1]
-JSON_FILE = '{}.json'.format(employee_id)
+It wont be executed if imported.
+"""
 
-employee = requests.get('{}/users/{}'.format(BASE_URL, employee_id)).json()
-all_tasks = requests.get(
-    '{}/users/{}/todos'.format(BASE_URL, employee_id)).json()
+if __name__ == '__main__':
+    import json
+    import requests
+    import sys
 
-with open(JSON_FILE, 'w', encoding='utf-8') as j_f:
-    obj = {
-        employee.get('id'): [
-            {
-                'task': t.get('title'),
-                'completed': t.get('completed'),
-                'username': employee.get('username')
-            }for t in all_tasks]
-    }
-    j_writer = json.dump(obj, j_f)
+    BASE_URL = 'https://jsonplaceholder.typicode.com'
+    employee_id = sys.argv[1]
+    JSON_FILE = '{}.json'.format(employee_id)
+
+    employee = requests.get('{}/users/{}'.format(BASE_URL, employee_id)).json()
+    all_tasks = requests.get(
+        '{}/users/{}/todos'.format(BASE_URL, employee_id)).json()
+
+    with open(JSON_FILE, 'w', encoding='utf-8') as j_f:
+        obj = {
+            employee.get('id'): [
+                {
+                    'task': t.get('title'),
+                    'completed': t.get('completed'),
+                    'username': employee.get('username')
+                }for t in all_tasks]
+        }
+        j_writer = json.dump(obj, j_f)
