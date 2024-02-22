@@ -1,11 +1,8 @@
 server {
   listen 80;
 
-  location ~ /api/(.*) {
-    include proxy_params;
-    proxy_pass http://0.0.0.0:5002/api/$1;
-  }
   location ~ /(.*) {
+    include proxy_params;
     proxy_pass http://0.0.0.0:5003/2-hbnb/$1;
   }
   location ^~ /static/ {
